@@ -1,5 +1,5 @@
 {% set name = "napari-pystackreg" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari_pystackreg-{{ version }}.tar.gz
-  sha256: fc69da578343941fa775eb1059aae5f7521ba900fda057518a91c261dcbd7fe1
+  sha256: 6678365811296f65c1021ec369921185d42cf63ea1aff91fdc6b2355af57527a
 
 build:
   noarch: python
