@@ -22,11 +22,12 @@ requirements:
     - python >=3.8
   run:
     - magicgui
+    - napari
     - numpy
     - pystackreg >=0.2.6
     - python >=3.8
     - qtpy
-    - napari
+    - scikit-image
 
 test:
   imports:
