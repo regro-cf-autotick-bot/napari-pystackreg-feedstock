@@ -6,26 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari_pystackreg-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_pystackreg-{{ version }}.tar.gz
   sha256: ea3fb0b3ecc7b90b64f44c1ced4a85a6cf8231b07e5985ad59a6c1c152cd4cb3
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   script_env:
     - QT_QPA_PLATFORM=offscreen
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - magicgui
     - napari
     - numpy
     - pystackreg >=0.2.6
-    - python >=3.8
+    - python >={{ python_min }}
     - qtpy
     - scikit-image
 
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/glichtner/napari-pystackreg
